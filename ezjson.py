@@ -22,11 +22,11 @@ class Json(object):
 		json = ''		
 					
 		if type(o) in (list, tuple): 
-			json = '[%s]' % ', '.join([str(self.__normalize(i)) for i in o if self.__normalize(i)])					
+			json = '[%s]' % ', '.join([str(self.__normalize(i)) for i in o if self.__normalize(i) ])					
 		elif self.__depth < self.__max_depth and hasattr(o, '__dict__') or type(o) == dict:
 			self.__depth += 1
 			dic = vars(o) if hasattr(o, '__dict__') else o			
-			json = '{%s}' % ', '.join( [ '"%s":%s' % (k, self.__normalize(v)) for k, v in dic.items() if self.__normalize(v) ] )
+			json = '{%s}' % ', '.join( [ '"%s":%s' % (k, self.__normalize(v)) for k, v in dic.items() if self.__normalize(v) and not re.match('^_', str(k)) ] )
 			self.__depth -= 1			
 		else:
 			json = self.__build_js_values(o)			
@@ -35,13 +35,13 @@ class Json(object):
 	@classmethod
 	def __build_js_values(self, v):
 		'''builds json atomic values (like number, string, booleans...) from python constants e objects'''
-		if type(v) in (bool, int, long, float, str, datetime.datetime, datetime.date, datetime.time) or v is None:					
+		if type(v) in (bool, int, long, float, str, unicode, datetime.datetime, datetime.date, datetime.time) or v is None:					
 			if type(v) is bool:
 				v = 'false' if v is False else 'true'
 			elif type(v) is long:
 				v = int(v)		
 			elif isinstance(v, basestring):
-				v = '"%s"' % v			
+				v = '"%s"' % v.encode('u8')			
 			elif isinstance(v, datetime.datetime) or isinstance(v, datetime.date) or isinstance(v, datetime.time):
 				v = '"%s"' % v.strftime(self.__date_format)
 			elif v is None:
