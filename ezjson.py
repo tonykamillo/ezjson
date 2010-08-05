@@ -41,7 +41,8 @@ class Json(object):
 			elif type(v) is long:
 				v = int(v)		
 			elif isinstance(v, basestring):
-				v = '"%s"' % v.encode('u8')			
+				if type(v) is unicode: v = v.encode('u8')
+				v = '"%s"' % v
 			elif isinstance(v, datetime.datetime) or isinstance(v, datetime.date) or isinstance(v, datetime.time):
 				v = '"%s"' % v.strftime(self.__date_format)
 			elif v is None:
