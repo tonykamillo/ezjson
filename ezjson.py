@@ -7,7 +7,7 @@ def encode(o, date_format='%Y/%m/%d', max_depth=3):
     return dump(o, date_format='%Y/%m/%d', max_depth=3)
 
 def decode(json, to_object=False):
-    load(json, to_object=False)
+    return load(json, to_object=False)
 
 def dump(o, date_format='%Y/%m/%d', max_depth=3):
     '''shortcut to Json.encode'''
