@@ -43,7 +43,7 @@ decoded = json.decode(encoded)
 - *json*: The json that will be loaded as a python data
 - *to_object*: If True returns a python object. 
 
-Returns a dict as default data or a python object if to_object is True.
+Returns a dict by default or a python object if to_object is True.
 
 **decode(json, to_object=False)**
 
