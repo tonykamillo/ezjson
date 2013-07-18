@@ -28,9 +28,9 @@ decoded = json.decode(encoded)
 ##Functions
 **dump(python_data, date_format='%Y/%m/%d', max_depth=3)**
 
-- *python_data*: the python data to be converted to json
-- *date_format*: format of dates will be formated
-- *max_depth*: refer to how deep the recursion can reach
+- *python_data*: the python data to be converted to json.
+- *date_format*: pattern for formatting dates. Default pattern is %Y/%m/%d.
+- *max_depth*: refer to how deep the recursion can reach (object inside object, inside object, inside...). Default is 3.
 
     Returns a unicode of the encoded json. 
 
