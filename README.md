@@ -36,14 +36,14 @@ decoded = json.decode(encoded)
 
 **encode(python_data, date_format='%Y/%m/%d', max_depth=3)**
 
-   Alias to dump function
+Alias to dump function
 
 **load(json, to_object=False)**
 
 - *json*: The json that will be loaded as a python data
 - *to_object*: If True returns a python object. 
 
-Returns a dict by default or a python object if to_object is True.
+    Returns a dict by default or a python object if to_object is True.
 
 **decode(json, to_object=False)**
 
