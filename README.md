@@ -4,7 +4,7 @@ ezjson
 Ezjson (means easy json) is a simple python module to encode and decode json. The reason why I did this module, it's because I dont like the way as another modules works. There is some python objects (like datetime.date) that aren't JSON serializable and it often generates errors. Encode and decode JSON should be a simple task.
 
 
-##Usage
+#Usage
 ```python
 import ezjson as json
 
@@ -22,7 +22,7 @@ decoded = json.decode(encoded)
 
 ```
 
-##Functions
+#Functions
 **dump(python_data, date_format='%Y/%m/%d', max_depth=3)**
 
 - *python_data*: the python data to be converted to json.
@@ -46,7 +46,7 @@ Alias to dump function
 
 Alias to load function
 
-##Installation
+#Installation
 
 ```bash
 $ pip install ezjson
