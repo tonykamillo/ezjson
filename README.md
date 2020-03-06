@@ -1,10 +1,7 @@
 ezjson
 ======
 
-Ezjson (means easy json) is a simple python module to encode and decode json.
-The reason by which I did this module, is because i dont like the way as anothers modules, works .
-There is some python objects (like datetime.date) that isn't JSON serializable and it often generates errors.
-Encode and decode JSON it should be an simple task, like in PHP way.
+Ezjson (means easy json) is a simple python module to encode and decode json. The reason why I did this module, it's because I dont like the way as another modules works. There is some python objects (like datetime.date) that aren't JSON serializable and it often generates errors. Encode and decode JSON should be a simple task.
 
 
 ##Usage
